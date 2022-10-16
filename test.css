@@ -426,7 +426,7 @@ header {
 	display: inline-block;
 }
 
-.left_menu .menu_wrap li.ac .inMenu,
+/* .left_menu .menu_wrap li.ac .inMenu, */
 .left_menu .menu_wrap li:hover .inMenu {
 	transition: 1.2s ease;
 	display: block;
@@ -1285,6 +1285,8 @@ footer .patent a {
 
 .sectionPlatform .hoverInner .slick-dots {
 	opacity: 0;
+	top: 0;
+	bottom: initial;
 }
 
 .sectionArea .slickSlide .heading {

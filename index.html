@@ -133,27 +133,8 @@
 					  <li class="alone-list">
 						<a href="#none">무료체험</a>
 					  </li>
-					  <!-- 메뉴 아코디언 -->
-					  <script type="text/javascript">
-							const list = document.querySelectorAll('.menu_wrap > li');
-							for(let i = 0; i < list.length; i++) {
-								list[i].addEventListener('click', function () {
-									list[i].classList.toggle('ac')
-								})
-							}
-							
-					  </script>
 				 </ul>
-				 <!-- 햄버거 토글 -->
-				 <script>
-					const mobileMenu = document.querySelector('.mobile-menu-toggle')
-					const menu_wrap = document.querySelector('.menu_wrap');
-					const body = document.getElementsByTagName('body')
-					mobileMenu.addEventListener('click', function(){
-						menu_wrap.classList.toggle('ac');
-						body[0].classList.toggle('menuOpen');
-					})
-				</script>
+				 
 			</nav>
 			<!--rirghtMenu-->
 			<button id="right_menu_btn" class="right_menu_btn"></button>
@@ -838,6 +819,31 @@
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+	<!-- 햄버거 토글 -->
+	<script type="text/javascript">
+		const mobileMenu = document.querySelector('.mobile-menu-toggle')
+		const menu_wrap = document.querySelector('.menu_wrap');
+		const body = document.getElementsByTagName('body')
+		mobileMenu.addEventListener('click', function(){
+			
+			menu_wrap.classList.toggle('ac');
+			body[0].classList.toggle('menuOpen');
+		})
+	</script>
+
+	<!-- 메뉴 아코디언 -->
+	<script type="text/javascript">
+		const list = document.querySelectorAll('.menu_wrap > li');
+		for(let i = 0; i < list.length; i++) {
+			list[i].addEventListener('click', function() {
+				list[i].classList.toggle('ac');
+			})
+		}
+		
+  </script>
+
 
 	<!-- 슬릭 -->
 	<script type="text/javascript">
