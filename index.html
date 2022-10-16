@@ -827,6 +827,7 @@
 		const menu_wrap = document.querySelector('.menu_wrap');
 		const body = document.getElementsByTagName('body')
 		mobileMenu.addEventListener('click', function(){
+			mobileMenu.classList.toggle('ac');
 			menu_wrap.classList.toggle('ac');
 			body[0].classList.toggle('menuOpen');
 		})
@@ -879,9 +880,14 @@
 					// 	e.classList = 'item'
 					// });
 
-					Array.prototype.forEach.call(trigger, function(e){
-						e.classList = 'item'
+					var elementList = trigger;
+        			console.log(elementList);
+					[].forEach.call(elementList, function(element) {
+						element.addEventListener('click', function() {
+							element.classList = 'item'
+						});
 					});
+
 
 					trigger[i].classList = 'item ac';
 				});
