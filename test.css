@@ -386,7 +386,14 @@ header {
 	margin-left: -30px;
 	position: absolute;
 }
-
+.left_menu .menu_wrap .inMenu:not(.deep) > ul > li {
+	display: flex;
+	align-items: center;
+}
+.left_menu .menu_wrap .inMenu:not(.deep) > ul > li > a {
+	width: 100%;
+	text-align: center;
+}
 .left_menu .menu_wrap .inMenu a {
 	display: block;
 	padding: 8px 10px 7px 10px;
@@ -2203,6 +2210,9 @@ footer .patent a {
 	}
 	.left_menu .menu_wrap li .inMenu > ul > li > a {
 		font-weight: normal;
+	}
+	.left_menu .menu_wrap .inMenu:not(.deep) > ul > li > a {
+		text-align: left;
 	}
 	.left_menu .menu_wrap li .inMenu > ul > li > a.font-b {
 		font-weight: bold;
