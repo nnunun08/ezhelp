@@ -398,7 +398,12 @@ header {
 	max-width: 70vw;
 	display: none;
 }
-
+.left_menu .menu_wrap .deep > ul {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .left_menu .menu_wrap .deep li {
 	width: auto;
 	display: inline-block;
