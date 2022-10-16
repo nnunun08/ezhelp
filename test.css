@@ -395,6 +395,7 @@ header {
 
 .left_menu .menu_wrap .deep {
 	width: max-content;
+	max-width: 70vw;
 	display: none;
 }
 
@@ -2182,6 +2183,9 @@ footer .patent a {
 	}
 	.left_menu .menu_wrap li.ac .inMenu {
 		display: block !important;
+	}
+	.left_menu .menu_wrap .deep {
+		max-width: 100vw;
 	}
 	.left_menu .menu_wrap li .inMenu > ul{
 		display: flex;
