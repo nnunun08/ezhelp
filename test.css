@@ -394,15 +394,14 @@ header {
 }
 
 .left_menu .menu_wrap .deep {
-	width: max-content;
-	max-width: 70vw;
+	width: 70vw;
 	display: none;
 }
 .left_menu .menu_wrap .deep > ul {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .left_menu .menu_wrap .deep li {
 	width: auto;
@@ -2192,7 +2191,7 @@ footer .patent a {
 		display: block !important;
 	}
 	.left_menu .menu_wrap .deep {
-		max-width: 100vw;
+		width: 100vw;
 	}
 	.left_menu .menu_wrap li .inMenu > ul{
 		display: flex;

@@ -865,30 +865,30 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			"use strict";
-			if ('NodeList' in window && !NodeList.prototype.forEach) {
-				console.info('polyfill for IE11');
-				NodeList.prototype.forEach = function (callback, thisArg) {
-					thisArg = thisArg || window;
-					for (var i = 0; i < this.length; i++) {
-					callback.call(thisArg, this[i], i, this);
-					}
-				};
-			}
 
 			var trigger = document.querySelectorAll('.sectionPlatform .subtabNavi.showing .item');
 			var _loop = function _loop(i) {
 			trigger[i].addEventListener('click', function () {
 				var dots = document.querySelectorAll('.slick-dots button');
 				dots[i].click();
-				trigger.forEach(function (el) {
-					el.classList = 'item';
-				});
+				// trigger.forEach(function (el) {
+				// 	el.classList = 'item';
+				// });
+				activeReset();
 				trigger[i].classList = 'item ac';
 			});
 			};
+			function activeReset() {
+			trigger.forEach(function (e) {
+				e.classList = 'item';
+			});
+			}
+			;
 			for (var i = 0; i < trigger.length; i++) {
 			_loop(i);
 			}
+
+			
 		});
 	</script>
 </body>
