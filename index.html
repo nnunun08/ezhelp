@@ -875,9 +875,14 @@
 				trigger[i].addEventListener('click', function () {
 					var dots = document.querySelectorAll('.slick-dots button');
 					dots[i].click();
-					trigger.forEach(function(e) {
+					// trigger.forEach(function(e) {
+					// 	e.classList = 'item'
+					// });
+
+					Array.prototype.forEach.call(trigger, function(e){
 						e.classList = 'item'
 					});
+
 					trigger[i].classList = 'item ac';
 				});
 			};
