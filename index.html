@@ -137,7 +137,7 @@
 					  <script type="text/javascript">
 							const list = document.querySelectorAll('.menu_wrap > li');
 							for(let i = 0; i < list.length; i++) {
-								list[i].addEventListener('click', ()=>{
+								list[i].addEventListener('click', function () {
 									list[i].classList.toggle('ac')
 								})
 							}
@@ -149,7 +149,7 @@
 					const mobileMenu = document.querySelector('.mobile-menu-toggle')
 					const menu_wrap = document.querySelector('.menu_wrap');
 					const body = document.getElementsByTagName('body')
-					mobileMenu.addEventListener('click', ()=>{
+					mobileMenu.addEventListener('click', function(){
 						menu_wrap.classList.toggle('ac');
 						body[0].classList.toggle('menuOpen');
 					})
@@ -166,7 +166,7 @@
 			<script>
 				const rightToggle = document.getElementById('right_menu_btn');
 				const rightToggleItem = document.getElementById('right_menu')
-				rightToggle.addEventListener('click', ()=>{
+				rightToggle.addEventListener('click', function(){
 					rightToggleItem.classList.toggle('ac')
 				})
 			</script>
@@ -857,7 +857,7 @@
 		$(document).ready(function() {
 			const trigger = document.querySelectorAll('.sectionPlatform .subtabNavi.showing .item') 
 			for(let i = 0; i < trigger.length; i++) {
-				trigger[i].addEventListener('click', ()=>{
+				trigger[i].addEventListener('click', function(){
 					const dots = document.querySelectorAll('.slick-dots button');
 					dots[i].click();
 					trigger.forEach( el => el.classList = 'item');
