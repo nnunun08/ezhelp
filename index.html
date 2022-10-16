@@ -827,7 +827,6 @@
 		const menu_wrap = document.querySelector('.menu_wrap');
 		const body = document.getElementsByTagName('body')
 		mobileMenu.addEventListener('click', function(){
-			
 			menu_wrap.classList.toggle('ac');
 			body[0].classList.toggle('menuOpen');
 		})
@@ -835,13 +834,26 @@
 
 	<!-- 메뉴 아코디언 -->
 	<script type="text/javascript">
-		const list = document.querySelectorAll('.menu_wrap > li');
-		for(let i = 0; i < list.length; i++) {
-			list[i].addEventListener('click', function() {
+		$(document).ready(function(){
+			// const list = document.querySelectorAll('.menu_wrap > li');
+			// for(let i = 0; i < list.length; i++) {
+			// 	list[i].addEventListener('click', function() {
+			// 		list[i].classList.toggle('ac');
+			// 	})
+			// }
+
+			"use strict";
+
+			var list = document.querySelectorAll('.menu_wrap > li');
+			var _loop = function _loop(i) {
+			list[i].addEventListener('click', function () {
 				list[i].classList.toggle('ac');
-			})
-		}
-		
+			});
+			};
+			for (var i = 0; i < list.length; i++) {
+			_loop(i);
+			}
+		})
   </script>
 
 
@@ -855,20 +867,38 @@
 				dots: true,
 			});
 		});
-		
 	</script>	
 
 	<!-- slide -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			const trigger = document.querySelectorAll('.sectionPlatform .subtabNavi.showing .item') 
-			for(let i = 0; i < trigger.length; i++) {
-				trigger[i].addEventListener('click', function(){
-					const dots = document.querySelectorAll('.slick-dots button');
-					dots[i].click();
-					trigger.forEach( el => el.classList = 'item');
-					trigger[i].classList = 'item ac'
-				})
+			// const trigger = document.querySelectorAll('.sectionPlatform .subtabNavi.showing .item') 
+			// for(let i = 0; i < trigger.length; i++) {
+			// 	trigger[i].addEventListener('click', function(){
+			// 		const dots = document.querySelectorAll('.slick-dots button');
+			// 		dots[i].click();
+			// 		trigger.forEach( function(el) {
+			// 			el.classList = 'item'
+			// 		});
+			// 		trigger[i].classList = 'item ac'
+			// 	})
+			// }
+
+			"use strict";
+
+			var trigger = document.querySelectorAll('.sectionPlatform .subtabNavi.showing .item');
+			var _loop = function _loop(i) {
+			trigger[i].addEventListener('click', function () {
+				var dots = document.querySelectorAll('.slick-dots button');
+				dots[i].click();
+				trigger.forEach(function (el) {
+				el.classList = 'item';
+				});
+				trigger[i].classList = 'item ac';
+			});
+			};
+			for (var i = 0; i < trigger.length; i++) {
+			_loop(i);
 			}
 		});
 	</script>
