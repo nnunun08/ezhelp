@@ -835,23 +835,15 @@
 	<!-- 메뉴 아코디언 -->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			// const list = document.querySelectorAll('.menu_wrap > li');
-			// for(let i = 0; i < list.length; i++) {
-			// 	list[i].addEventListener('click', function() {
-			// 		list[i].classList.toggle('ac');
-			// 	})
-			// }
-
 			"use strict";
-
 			var list = document.querySelectorAll('.menu_wrap > li');
 			var _loop = function _loop(i) {
-			list[i].addEventListener('click', function () {
-				list[i].classList.toggle('ac');
-			});
+				list[i].addEventListener('click', function () {
+					list[i].classList.toggle('ac');
+				});
 			};
 			for (var i = 0; i < list.length; i++) {
-			_loop(i);
+				_loop(i);
 			}
 		})
   </script>
@@ -872,19 +864,16 @@
 	<!-- slide -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			// const trigger = document.querySelectorAll('.sectionPlatform .subtabNavi.showing .item') 
-			// for(let i = 0; i < trigger.length; i++) {
-			// 	trigger[i].addEventListener('click', function(){
-			// 		const dots = document.querySelectorAll('.slick-dots button');
-			// 		dots[i].click();
-			// 		trigger.forEach( function(el) {
-			// 			el.classList = 'item'
-			// 		});
-			// 		trigger[i].classList = 'item ac'
-			// 	})
-			// }
-
 			"use strict";
+			if ('NodeList' in window && !NodeList.prototype.forEach) {
+				console.info('polyfill for IE11');
+				NodeList.prototype.forEach = function (callback, thisArg) {
+					thisArg = thisArg || window;
+					for (var i = 0; i < this.length; i++) {
+					callback.call(thisArg, this[i], i, this);
+					}
+				};
+			}
 
 			var trigger = document.querySelectorAll('.sectionPlatform .subtabNavi.showing .item');
 			var _loop = function _loop(i) {
@@ -892,7 +881,7 @@
 				var dots = document.querySelectorAll('.slick-dots button');
 				dots[i].click();
 				trigger.forEach(function (el) {
-				el.classList = 'item';
+					el.classList = 'item';
 				});
 				trigger[i].classList = 'item ac';
 			});
